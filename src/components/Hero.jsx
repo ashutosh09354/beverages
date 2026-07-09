@@ -594,7 +594,7 @@ export default function Hero() {
             </h1>
  
             <p className="mt-2.5 text-xs sm:text-sm text-ink/60 max-w-xs mx-auto lg:mx-0">
-              From cold-pressed juices to energizing brews — discover
+              From cold-pressed juices to energizing brews  discover
               beverages made to refresh, recharge, and delight, delivered
               straight to your door.
             </p>

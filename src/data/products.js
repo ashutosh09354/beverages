@@ -1,8 +1,341 @@
 // Dummy beverage product data — no backend, local state only.
 // Brand names are fictional (original to this project), avoiding any real trademarks.
 
+// export const products = [
+//   // Juices
+//   {
+//     id: "j1",
+//     name: "Sunburst Orange Juice",
+//     category: "juices",
+//     size: "1 L",
+//     price: 120,
+//     oldPrice: 150,
+//     rating: 4.7,
+//     reviews: 312,
+//     color: "from-orange-400 to-amber-500",
+//     isBestSeller: true,
+//     isTrending: true,
+//     description:
+//       "Cold-pressed from ripe oranges with no added sugar or preservatives — just pure, sunny flavour in every glass.",
+//   },
+//   {
+//     id: "j2",
+//     name: "Meadow Apple Juice",
+//     category: "juices",
+//     size: "1 L",
+//     price: 110,
+//     oldPrice: 135,
+//     rating: 4.5,
+//     reviews: 198,
+//     color: "from-rose-300 to-red-400",
+//     isNew: true,
+//     description: "Crisp, cloudy apple juice pressed from farm-fresh apples.",
+//   },
+//   {
+//     id: "j3",
+//     name: "Tropic Mango Splash",
+//     category: "juices",
+//     size: "750 ml",
+//     price: 95,
+//     rating: 4.6,
+//     reviews: 145,
+//     color: "from-yellow-400 to-orange-400",
+//     description: "Rich Alphonso mango pulp blended into a thick, tropical juice.",
+//   },
+
+//   // Soft Drinks
+//   {
+//     id: "s1",
+//     name: "FizzPop Cola",
+//     category: "soft-drinks",
+//     size: "750 ml",
+//     price: 48,
+//     oldPrice: 55,
+//     rating: 4.4,
+//     reviews: 520,
+//     color: "from-red-500 to-rose-600",
+//     isBestSeller: true,
+//     description: "Classic bold cola flavour with a crisp, refreshing fizz.",
+//   },
+//   {
+//     id: "s2",
+//     name: "Citrus Twist Soda",
+//     category: "soft-drinks",
+//     size: "750 ml",
+//     price: 45,
+//     rating: 4.3,
+//     reviews: 210,
+//     color: "from-orange-400 to-yellow-400",
+//     isTrending: true,
+//     description: "Zesty citrus soda with a bright, bubbly finish.",
+//   },
+//   {
+//     id: "s3",
+//     name: "Wild Berry Fizz",
+//     category: "soft-drinks",
+//     size: "750 ml",
+//     price: 50,
+//     oldPrice: 60,
+//     rating: 4.2,
+//     reviews: 167,
+//     color: "from-fuchsia-400 to-pink-500",
+//     isNew: true,
+//     description: "A fruity berry soda with just the right amount of sweetness.",
+//   },
+
+//   // Energy Drinks
+//   {
+//     id: "e1",
+//     name: "Bolt Energy Drink",
+//     category: "energy-drinks",
+//     size: "250 ml",
+//     price: 115,
+//     rating: 4.8,
+//     reviews: 402,
+//     color: "from-sky-500 to-blue-600",
+//     isBestSeller: true,
+//     isTrending: true,
+//     description: "A fast-acting energy boost with taurine and caffeine for when you need to move.",
+//   },
+//   {
+//     id: "e2",
+//     name: "Surge Power Drink",
+//     category: "energy-drinks",
+//     size: "250 ml",
+//     price: 105,
+//     oldPrice: 120,
+//     rating: 4.5,
+//     reviews: 233,
+//     color: "from-indigo-500 to-violet-600",
+//     description: "High-octane energy drink for early mornings and late nights.",
+//   },
+
+//   // Sparkling Water
+//   {
+//     id: "w1",
+//     name: "Glacier Sparkling Water",
+//     category: "sparkling-water",
+//     size: "1 L",
+//     price: 65,
+//     rating: 4.6,
+//     reviews: 128,
+//     color: "from-cyan-300 to-sky-400",
+//     isNew: true,
+//     description: "Naturally carbonated spring water, crisp and clean.",
+//   },
+//   {
+//     id: "w2",
+//     name: "Lime Mint Sparkling Water",
+//     category: "sparkling-water",
+//     size: "1 L",
+//     price: 70,
+//     rating: 4.5,
+//     reviews: 96,
+//     color: "from-lime-300 to-emerald-400",
+//     description: "Sparkling water infused with a hint of lime and mint.",
+//   },
+
+//   // Milk
+//   {
+//     id: "m1",
+//     name: "Meadow Farm Buffalo Milk",
+//     category: "milk",
+//     size: "1 L",
+//     price: 95,
+//     rating: 4.8,
+//     reviews: 610,
+//     color: "from-slate-100 to-blue-100",
+//     isBestSeller: true,
+//     description: "Rich, creamy buffalo milk sourced from grass-fed herds.",
+//   },
+//   {
+//     id: "m2",
+//     name: "Golden Farm Toned Milk",
+//     category: "milk",
+//     size: "1 L",
+//     price: 58,
+//     rating: 4.6,
+//     reviews: 380,
+//     color: "from-amber-100 to-yellow-100",
+//     description: "Light, everyday toned milk for the whole family.",
+//   },
+
+//   // Coffee
+//   {
+//     id: "c1",
+//     name: "Roast House Cold Brew",
+//     category: "coffee",
+//     size: "300 ml",
+//     price: 140,
+//     oldPrice: 160,
+//     rating: 4.7,
+//     reviews: 264,
+//     color: "from-amber-700 to-amber-900",
+//     isTrending: true,
+//     description: "Slow-steeped cold brew coffee, smooth and never bitter.",
+//   },
+//   {
+//     id: "c2",
+//     name: "Roast House Caramel Latte",
+//     category: "coffee",
+//     size: "250 ml",
+//     price: 130,
+//     rating: 4.5,
+//     reviews: 175,
+//     color: "from-yellow-700 to-amber-800",
+//     isNew: true,
+//     description: "Espresso and creamy milk with a swirl of caramel.",
+//   },
+
+//   // Tea
+//   {
+//     id: "t1",
+//     name: "Leaf & Bloom Green Tea",
+//     category: "tea",
+//     size: "500 ml",
+//     price: 85,
+//     rating: 4.6,
+//     reviews: 142,
+//     color: "from-emerald-400 to-green-500",
+//     description: "Delicately brewed green tea, light and refreshing.",
+//   },
+//   {
+//     id: "t2",
+//     name: "Leaf & Bloom Peach Iced Tea",
+//     category: "tea",
+//     size: "500 ml",
+//     price: 80,
+//     oldPrice: 95,
+//     rating: 4.4,
+//     reviews: 118,
+//     color: "from-orange-300 to-amber-400",
+//     isTrending: true,
+//     description: "Iced black tea with a juicy peach twist.",
+//   },
+
+//   // Smoothies
+//   {
+//     id: "sm1",
+//     name: "Berry Blend Smoothie",
+//     category: "smoothies",
+//     size: "300 ml",
+//     price: 150,
+//     rating: 4.7,
+//     reviews: 96,
+//     color: "from-purple-400 to-fuchsia-500",
+//     isNew: true,
+//     description: "A thick blend of strawberries, blueberries and yogurt.",
+//   },
+//   {
+//     id: "sm2",
+//     name: "Green Detox Smoothie",
+//     category: "smoothies",
+//     size: "300 ml",
+//     price: 160,
+//     rating: 4.5,
+//     reviews: 84,
+//     color: "from-lime-400 to-green-500",
+//     description: "Spinach, apple and ginger blended for a clean energy lift.",
+//   },
+
+//   // Protein Drinks
+//   {
+//     id: "p1",
+//     name: "FlexFuel Chocolate Protein",
+//     category: "protein-drinks",
+//     size: "500 ml",
+//     price: 210,
+//     rating: 4.7,
+//     reviews: 220,
+//     color: "from-violet-600 to-purple-700",
+//     isBestSeller: true,
+//     description: "20g of whey protein in a rich chocolate shake.",
+//   },
+//   {
+//     id: "p2",
+//     name: "FlexFuel Vanilla Protein",
+//     category: "protein-drinks",
+//     size: "500 ml",
+//     price: 210,
+//     rating: 4.6,
+//     reviews: 190,
+//     color: "from-amber-200 to-yellow-300",
+//     description: "Smooth vanilla protein shake, perfect post-workout.",
+//   },
+
+//   // Mocktails
+//   {
+//     id: "mo1",
+//     name: "Virgin Mojito Mix",
+//     category: "mocktails",
+//     size: "300 ml",
+//     price: 130,
+//     rating: 4.5,
+//     reviews: 77,
+//     color: "from-teal-400 to-emerald-500",
+//     isNew: true,
+//     description: "Zero-proof mint and lime mojito, ready to pour over ice.",
+//   },
+//   {
+//     id: "mo2",
+//     name: "Sunset Mocktail Mix",
+//     category: "mocktails",
+//     size: "300 ml",
+//     price: 135,
+//     rating: 4.4,
+//     reviews: 63,
+//     color: "from-orange-400 to-pink-400",
+//     description: "A layered orange-grenadine mocktail blend.",
+//   },
+
+//   // Health Drinks
+//   {
+//     id: "h1",
+//     name: "VitaBoost Health Drink",
+//     category: "health-drinks",
+//     size: "500 g",
+//     price: 210,
+//     oldPrice: 240,
+//     rating: 4.7,
+//     reviews: 340,
+//     color: "from-fuchsia-600 to-purple-700",
+//     isBestSeller: true,
+//     description: "A malted health drink mix fortified with vitamins and minerals.",
+//   },
+//   {
+//     id: "h2",
+//     name: "Golden Turmeric Tonic",
+//     category: "health-drinks",
+//     size: "300 ml",
+//     price: 120,
+//     rating: 4.5,
+//     reviews: 112,
+//     color: "from-yellow-500 to-amber-600",
+//     description: "A warming turmeric and ginger wellness tonic.",
+//   },
+// ];
+
+// export const getProductsByCategory = (categoryId) =>
+//   products.filter((p) => p.category === categoryId);
+
+// export const getBestSellers = () => products.filter((p) => p.isBestSeller);
+// export const getTrending = () => products.filter((p) => p.isTrending);
+// export const getNewArrivals = () => products.filter((p) => p.isNew);
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const products = [
-  // Juices
+  // ============ JUICES ============
   {
     id: "j1",
     name: "Sunburst Orange Juice",
@@ -13,6 +346,7 @@ export const products = [
     rating: 4.7,
     reviews: 312,
     color: "from-orange-400 to-amber-500",
+    image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&h=500&fit=crop",
     isBestSeller: true,
     isTrending: true,
     description:
@@ -28,6 +362,7 @@ export const products = [
     rating: 4.5,
     reviews: 198,
     color: "from-rose-300 to-red-400",
+    image: "https://images.unsplash.com/photo-1560526860-1f0e56031b21?w=500&h=500&fit=crop",
     isNew: true,
     description: "Crisp, cloudy apple juice pressed from farm-fresh apples.",
   },
@@ -40,10 +375,35 @@ export const products = [
     rating: 4.6,
     reviews: 145,
     color: "from-yellow-400 to-orange-400",
+    image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=500&h=500&fit=crop",
     description: "Rich Alphonso mango pulp blended into a thick, tropical juice.",
   },
+  {
+    id: "j4",
+    name: "Ruby Pomegranate Juice",
+    category: "juices",
+    size: "750 ml",
+    price: 130,
+    rating: 4.6,
+    reviews: 88,
+    color: "from-rose-500 to-red-600",
+    image: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=500&h=500&fit=crop",
+    description: "Deep red pomegranate juice, tart and packed with antioxidants.",
+  },
+  {
+    id: "j5",
+    name: "Garden Carrot Beet Juice",
+    category: "juices",
+    size: "500 ml",
+    price: 90,
+    rating: 4.3,
+    reviews: 61,
+    color: "from-red-400 to-orange-500",
+    image: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&h=500&fit=crop",
+    description: "Earthy carrot and beet blend for a wholesome veggie boost.",
+  },
 
-  // Soft Drinks
+  // ============ SOFT DRINKS ============
   {
     id: "s1",
     name: "FizzPop Cola",
@@ -54,6 +414,7 @@ export const products = [
     rating: 4.4,
     reviews: 520,
     color: "from-red-500 to-rose-600",
+    image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&h=500&fit=crop",
     isBestSeller: true,
     description: "Classic bold cola flavour with a crisp, refreshing fizz.",
   },
@@ -66,6 +427,7 @@ export const products = [
     rating: 4.3,
     reviews: 210,
     color: "from-orange-400 to-yellow-400",
+    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&h=500&fit=crop",
     isTrending: true,
     description: "Zesty citrus soda with a bright, bubbly finish.",
   },
@@ -79,11 +441,24 @@ export const products = [
     rating: 4.2,
     reviews: 167,
     color: "from-fuchsia-400 to-pink-500",
+    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=500&h=500&fit=crop",
     isNew: true,
     description: "A fruity berry soda with just the right amount of sweetness.",
   },
+  {
+    id: "s4",
+    name: "Ginger Zing Soda",
+    category: "soft-drinks",
+    size: "750 ml",
+    price: 47,
+    rating: 4.1,
+    reviews: 92,
+    color: "from-amber-300 to-orange-400",
+    image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=500&h=500&fit=crop",
+    description: "A sharp, spicy ginger ale with a clean finish.",
+  },
 
-  // Energy Drinks
+  // ============ ENERGY DRINKS ============
   {
     id: "e1",
     name: "Bolt Energy Drink",
@@ -93,6 +468,7 @@ export const products = [
     rating: 4.8,
     reviews: 402,
     color: "from-sky-500 to-blue-600",
+    image: "https://images.unsplash.com/photo-1622543925917-6f5f0f4c6ab1?w=500&h=500&fit=crop",
     isBestSeller: true,
     isTrending: true,
     description: "A fast-acting energy boost with taurine and caffeine for when you need to move.",
@@ -107,10 +483,24 @@ export const products = [
     rating: 4.5,
     reviews: 233,
     color: "from-indigo-500 to-violet-600",
+    image: "https://images.unsplash.com/photo-1622543925917-816a2e8bdb45?w=500&h=500&fit=crop",
     description: "High-octane energy drink for early mornings and late nights.",
   },
+  {
+    id: "e3",
+    name: "Voltage Blue Rush",
+    category: "energy-drinks",
+    size: "300 ml",
+    price: 110,
+    rating: 4.6,
+    reviews: 154,
+    color: "from-blue-500 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1622543925917-84dd6a6c4c0b?w=500&h=500&fit=crop",
+    isNew: true,
+    description: "Electric blue raspberry energy drink with a jolt of caffeine.",
+  },
 
-  // Sparkling Water
+  // ============ SPARKLING WATER ============
   {
     id: "w1",
     name: "Glacier Sparkling Water",
@@ -120,6 +510,7 @@ export const products = [
     rating: 4.6,
     reviews: 128,
     color: "from-cyan-300 to-sky-400",
+    image: "https://images.unsplash.com/photo-1560023907-5f339617ea30?w=500&h=500&fit=crop",
     isNew: true,
     description: "Naturally carbonated spring water, crisp and clean.",
   },
@@ -132,10 +523,23 @@ export const products = [
     rating: 4.5,
     reviews: 96,
     color: "from-lime-300 to-emerald-400",
+    image: "https://images.unsplash.com/photo-1631206753348-db44968fd440?w=500&h=500&fit=crop",
     description: "Sparkling water infused with a hint of lime and mint.",
   },
+  {
+    id: "w3",
+    name: "Berry Fusion Sparkling Water",
+    category: "sparkling-water",
+    size: "1 L",
+    price: 72,
+    rating: 4.4,
+    reviews: 54,
+    color: "from-pink-300 to-rose-400",
+    image: "https://images.unsplash.com/photo-1616118132534-381148898bb4?w=500&h=500&fit=crop",
+    description: "Lightly carbonated water with a subtle mixed-berry aroma.",
+  },
 
-  // Milk
+  // ============ MILK ============
   {
     id: "m1",
     name: "Meadow Farm Buffalo Milk",
@@ -145,6 +549,7 @@ export const products = [
     rating: 4.8,
     reviews: 610,
     color: "from-slate-100 to-blue-100",
+    image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&h=500&fit=crop",
     isBestSeller: true,
     description: "Rich, creamy buffalo milk sourced from grass-fed herds.",
   },
@@ -157,10 +562,37 @@ export const products = [
     rating: 4.6,
     reviews: 380,
     color: "from-amber-100 to-yellow-100",
+    image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&h=500&fit=crop",
     description: "Light, everyday toned milk for the whole family.",
   },
+  {
+    id: "m3",
+    name: "Almond Breeze Milk",
+    category: "milk",
+    size: "1 L",
+    price: 145,
+    rating: 4.5,
+    reviews: 210,
+    color: "from-amber-50 to-orange-100",
+    image: "https://images.unsplash.com/photo-1600788907416-456578634209?w=500&h=500&fit=crop",
+    isNew: true,
+    description: "Plant-based almond milk, unsweetened and dairy-free.",
+  },
+  {
+    id: "m4",
+    name: "Oat Wave Milk",
+    category: "milk",
+    size: "1 L",
+    price: 150,
+    rating: 4.6,
+    reviews: 178,
+    color: "from-yellow-100 to-amber-200",
+    image: "https://images.unsplash.com/photo-1621866330746-b9de5e6a1e5a?w=500&h=500&fit=crop",
+    isTrending: true,
+    description: "Creamy, barista-style oat milk perfect for coffee.",
+  },
 
-  // Coffee
+  // ============ COFFEE ============
   {
     id: "c1",
     name: "Roast House Cold Brew",
@@ -171,6 +603,7 @@ export const products = [
     rating: 4.7,
     reviews: 264,
     color: "from-amber-700 to-amber-900",
+    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=500&h=500&fit=crop",
     isTrending: true,
     description: "Slow-steeped cold brew coffee, smooth and never bitter.",
   },
@@ -183,11 +616,24 @@ export const products = [
     rating: 4.5,
     reviews: 175,
     color: "from-yellow-700 to-amber-800",
+    image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=500&h=500&fit=crop",
     isNew: true,
     description: "Espresso and creamy milk with a swirl of caramel.",
   },
+  {
+    id: "c3",
+    name: "Mocha Chill Frappe",
+    category: "coffee",
+    size: "300 ml",
+    price: 145,
+    rating: 4.6,
+    reviews: 132,
+    color: "from-amber-800 to-stone-900",
+    image: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=500&h=500&fit=crop",
+    description: "Chocolate and espresso blended into a frosty, indulgent treat.",
+  },
 
-  // Tea
+  // ============ TEA ============
   {
     id: "t1",
     name: "Leaf & Bloom Green Tea",
@@ -197,6 +643,7 @@ export const products = [
     rating: 4.6,
     reviews: 142,
     color: "from-emerald-400 to-green-500",
+    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop",
     description: "Delicately brewed green tea, light and refreshing.",
   },
   {
@@ -209,11 +656,24 @@ export const products = [
     rating: 4.4,
     reviews: 118,
     color: "from-orange-300 to-amber-400",
+    image: "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&h=500&fit=crop",
     isTrending: true,
     description: "Iced black tea with a juicy peach twist.",
   },
+  {
+    id: "t3",
+    name: "Chamomile Honey Tea",
+    category: "tea",
+    size: "500 ml",
+    price: 88,
+    rating: 4.5,
+    reviews: 74,
+    color: "from-yellow-200 to-amber-300",
+    image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500&h=500&fit=crop",
+    description: "Soothing chamomile tea lightly sweetened with honey.",
+  },
 
-  // Smoothies
+  // ============ SMOOTHIES ============
   {
     id: "sm1",
     name: "Berry Blend Smoothie",
@@ -223,6 +683,7 @@ export const products = [
     rating: 4.7,
     reviews: 96,
     color: "from-purple-400 to-fuchsia-500",
+    image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=500&h=500&fit=crop",
     isNew: true,
     description: "A thick blend of strawberries, blueberries and yogurt.",
   },
@@ -235,10 +696,23 @@ export const products = [
     rating: 4.5,
     reviews: 84,
     color: "from-lime-400 to-green-500",
+    image: "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=500&h=500&fit=crop",
     description: "Spinach, apple and ginger blended for a clean energy lift.",
   },
+  {
+    id: "sm3",
+    name: "Mango Banana Smoothie",
+    category: "smoothies",
+    size: "300 ml",
+    price: 155,
+    rating: 4.6,
+    reviews: 70,
+    color: "from-yellow-400 to-amber-500",
+    image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&h=500&fit=crop",
+    description: "Sweet mango and banana blended into a velvety smoothie.",
+  },
 
-  // Protein Drinks
+  // ============ PROTEIN DRINKS ============
   {
     id: "p1",
     name: "FlexFuel Chocolate Protein",
@@ -248,6 +722,7 @@ export const products = [
     rating: 4.7,
     reviews: 220,
     color: "from-violet-600 to-purple-700",
+    image: "https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=500&h=500&fit=crop",
     isBestSeller: true,
     description: "20g of whey protein in a rich chocolate shake.",
   },
@@ -260,10 +735,24 @@ export const products = [
     rating: 4.6,
     reviews: 190,
     color: "from-amber-200 to-yellow-300",
+    image: "https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=500&h=500&fit=crop",
     description: "Smooth vanilla protein shake, perfect post-workout.",
   },
+  {
+    id: "p3",
+    name: "FlexFuel Peanut Butter Protein",
+    category: "protein-drinks",
+    size: "500 ml",
+    price: 220,
+    rating: 4.6,
+    reviews: 102,
+    color: "from-amber-600 to-yellow-700",
+    image: "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&h=500&fit=crop",
+    isNew: true,
+    description: "Creamy peanut butter protein shake for muscle recovery.",
+  },
 
-  // Mocktails
+  // ============ MOCKTAILS ============
   {
     id: "mo1",
     name: "Virgin Mojito Mix",
@@ -273,6 +762,7 @@ export const products = [
     rating: 4.5,
     reviews: 77,
     color: "from-teal-400 to-emerald-500",
+    image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500&h=500&fit=crop",
     isNew: true,
     description: "Zero-proof mint and lime mojito, ready to pour over ice.",
   },
@@ -285,10 +775,23 @@ export const products = [
     rating: 4.4,
     reviews: 63,
     color: "from-orange-400 to-pink-400",
+    image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?w=500&h=500&fit=crop",
     description: "A layered orange-grenadine mocktail blend.",
   },
+  {
+    id: "mo3",
+    name: "Blue Lagoon Mocktail Mix",
+    category: "mocktails",
+    size: "300 ml",
+    price: 138,
+    rating: 4.3,
+    reviews: 49,
+    color: "from-blue-400 to-cyan-500",
+    image: "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=500&h=500&fit=crop",
+    description: "A bright blue citrus mocktail with a splash of lemonade.",
+  },
 
-  // Health Drinks
+  // ============ HEALTH DRINKS ============
   {
     id: "h1",
     name: "VitaBoost Health Drink",
@@ -299,6 +802,7 @@ export const products = [
     rating: 4.7,
     reviews: 340,
     color: "from-fuchsia-600 to-purple-700",
+    image: "https://images.unsplash.com/photo-1610450949065-1f2841536c88?w=500&h=500&fit=crop",
     isBestSeller: true,
     description: "A malted health drink mix fortified with vitamins and minerals.",
   },
@@ -311,8 +815,93 @@ export const products = [
     rating: 4.5,
     reviews: 112,
     color: "from-yellow-500 to-amber-600",
+    image: "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=500&h=500&fit=crop",
     description: "A warming turmeric and ginger wellness tonic.",
   },
+  {
+    id: "h3",
+    name: "Immunity Citrus Shot",
+    category: "health-drinks",
+    size: "100 ml",
+    price: 60,
+    rating: 4.6,
+    reviews: 88,
+    color: "from-orange-500 to-red-500",
+    image: "https://images.unsplash.com/photo-1610631787543-32ac89e97e5b?w=500&h=500&fit=crop",
+    isTrending: true,
+    description: "A concentrated citrus and ginger shot for an immunity kick.",
+  },
+
+  // ============ FLAVORED WATER ============
+  {
+    id: "fw1",
+    name: "Cucumber Mint Water",
+    category: "flavored-water",
+    size: "1 L",
+    price: 55,
+    rating: 4.4,
+    reviews: 66,
+    color: "from-green-200 to-emerald-300",
+    image: "https://images.unsplash.com/photo-1550505095-81375e2ef5c1?w=500&h=500&fit=crop",
+    isNew: true,
+    description: "Refreshing still water infused with cucumber and mint.",
+  },
+  {
+    id: "fw2",
+    name: "Watermelon Splash Water",
+    category: "flavored-water",
+    size: "1 L",
+    price: 58,
+    rating: 4.5,
+    reviews: 71,
+    color: "from-pink-300 to-red-400",
+    image: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500&h=500&fit=crop",
+    description: "Lightly flavored water with a natural watermelon essence.",
+  },
+
+  // ============ KOMBUCHA ============
+  {
+    id: "k1",
+    name: "Ginger Lemon Kombucha",
+    category: "kombucha",
+    size: "500 ml",
+    price: 175,
+    rating: 4.6,
+    reviews: 58,
+    color: "from-amber-300 to-yellow-500",
+    image: "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?w=500&h=500&fit=crop",
+    isNew: true,
+    description: "Fermented tea with a tangy ginger-lemon kick and live cultures.",
+  },
+  {
+    id: "k2",
+    name: "Berry Hibiscus Kombucha",
+    category: "kombucha",
+    size: "500 ml",
+    price: 180,
+    rating: 4.5,
+    reviews: 41,
+    color: "from-rose-400 to-purple-500",
+    image: "https://images.unsplash.com/photo-1608270586620-248524c67de9?w=500&h=500&fit=crop",
+    isTrending: true,
+    description: "A fizzy, probiotic-rich kombucha with berry and hibiscus notes.",
+  },
+];
+
+export const categories = [
+  { id: "juices", label: "Juices" },
+  { id: "soft-drinks", label: "Soft Drinks" },
+  { id: "energy-drinks", label: "Energy Drinks" },
+  { id: "sparkling-water", label: "Sparkling Water" },
+  { id: "milk", label: "Milk" },
+  { id: "coffee", label: "Coffee" },
+  { id: "tea", label: "Tea" },
+  { id: "smoothies", label: "Smoothies" },
+  { id: "protein-drinks", label: "Protein Drinks" },
+  { id: "mocktails", label: "Mocktails" },
+  { id: "health-drinks", label: "Health Drinks" },
+  { id: "flavored-water", label: "Flavored Water" },
+  { id: "kombucha", label: "Kombucha" },
 ];
 
 export const getProductsByCategory = (categoryId) =>
@@ -321,3 +910,8 @@ export const getProductsByCategory = (categoryId) =>
 export const getBestSellers = () => products.filter((p) => p.isBestSeller);
 export const getTrending = () => products.filter((p) => p.isTrending);
 export const getNewArrivals = () => products.filter((p) => p.isNew);
+export const getProductById = (id) => products.find((p) => p.id === id);
+export const searchProducts = (query) =>
+  products.filter((p) =>
+    p.name.toLowerCase().includes(query.toLowerCase())
+  );
