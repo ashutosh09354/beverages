@@ -1297,71 +1297,71 @@ export const products = [
     description: "Monster Energy Ultra Rosa is a zero sugar, zero calorie energy drink with crisp and light floral flavors fueled by our Monster Energy blend,150mg Caffeine",
   },
 
-  {
-    id: "s4",
-    name: "Ginger Zing Soda",
-    category: "soft-drinks",
-    size: "750 ml",
-    price: 47,
-    rating: 4.1,
-    reviews: 92,
-    color: "from-amber-300 to-orange-400",
-    image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=500&h=500&fit=crop",
-    description: "A sharp, spicy ginger ale with a clean finish.",
-  },
-  {
-    id: "s5",
-    name: "Classic Lemonade Fizz",
-    category: "soft-drinks",
-    size: "750 ml",
-    price: 46,
-    rating: 4.3,
-    reviews: 145,
-    color: "from-yellow-300 to-lime-400",
-    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&h=500&fit=crop",
-    description: "Sparkling lemonade with a tangy, old-fashioned lemon punch.",
-  },
-  {
-    id: "s6",
-    name: "Root Brew Float Soda",
-    category: "soft-drinks",
-    size: "750 ml",
-    price: 52,
-    oldPrice: 58,
-    rating: 4.2,
-    reviews: 88,
-    color: "from-amber-700 to-stone-800",
-    image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&h=500&fit=crop",
-    description: "Rich, creamy root brew soda with warm vanilla notes.",
-  },
-  {
-    id: "s7",
-    name: "Grape Crush Soda",
-    category: "soft-drinks",
-    size: "750 ml",
-    price: 49,
-    rating: 4.1,
-    reviews: 76,
-    color: "from-purple-400 to-violet-500",
-    image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=500&h=500&fit=crop",
-    isNew: true,
-    description: "Deep purple grape soda, bold and satisfyingly sweet.",
-  },
-  {
-    id: "s8",
-    name: "Cream Soda Classic",
-    category: "soft-drinks",
-    size: "750 ml",
-    price: 48,
-    rating: 4.3,
-    reviews: 112,
-    color: "from-amber-100 to-yellow-200",
-    image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=500&h=500&fit=crop",
-    description: "Smooth, vanilla-forward cream soda with gentle carbonation.",
-  },
+  // {
+  //   id: "s4",
+  //   name: "Ginger Zing Soda",
+  //   category: "soft-drinks",
+  //   size: "750 ml",
+  //   price: 47,
+  //   rating: 4.1,
+  //   reviews: 92,
+  //   color: "from-amber-300 to-orange-400",
+  //   image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=500&h=500&fit=crop",
+  //   description: "A sharp, spicy ginger ale with a clean finish.",
+  // },
+  // {
+  //   id: "s5",
+  //   name: "Classic Lemonade Fizz",
+  //   category: "soft-drinks",
+  //   size: "750 ml",
+  //   price: 46,
+  //   rating: 4.3,
+  //   reviews: 145,
+  //   color: "from-yellow-300 to-lime-400",
+  //   image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&h=500&fit=crop",
+  //   description: "Sparkling lemonade with a tangy, old-fashioned lemon punch.",
+  // },
+  // {
+  //   id: "s6",
+  //   name: "Root Brew Float Soda",
+  //   category: "soft-drinks",
+  //   size: "750 ml",
+  //   price: 52,
+  //   oldPrice: 58,
+  //   rating: 4.2,
+  //   reviews: 88,
+  //   color: "from-amber-700 to-stone-800",
+  //   image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500&h=500&fit=crop",
+  //   description: "Rich, creamy root brew soda with warm vanilla notes.",
+  // },
+  // {
+  //   id: "s7",
+  //   name: "Grape Crush Soda",
+  //   category: "soft-drinks",
+  //   size: "750 ml",
+  //   price: 49,
+  //   rating: 4.1,
+  //   reviews: 76,
+  //   color: "from-purple-400 to-violet-500",
+  //   image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=500&h=500&fit=crop",
+  //   isNew: true,
+  //   description: "Deep purple grape soda, bold and satisfyingly sweet.",
+  // },
+  // {
+  //   id: "s8",
+  //   name: "Cream Soda Classic",
+  //   category: "soft-drinks",
+  //   size: "750 ml",
+  //   price: 48,
+  //   rating: 4.3,
+  //   reviews: 112,
+  //   color: "from-amber-100 to-yellow-200",
+  //   image: "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=500&h=500&fit=crop",
+  //   description: "Smooth, vanilla-forward cream soda with gentle carbonation.",
+  // },
 
   // ============ ENERGY DRINKS ============
-                {
+  {
     id: "NON Stop Classic Energy Drink",
     name: "NON Stop Classic Energy Drink | Refreshing Energy Boost",
     category: "energy-drinks",
@@ -1375,7 +1375,7 @@ export const products = [
     isTrending: true,
     description: "NON Stop Classic Energy Drink | Refreshing Energy Boost.",
   },
-              {
+  {
     id: "Fast&Up Reload Mango Zero Sugar Energy Drink",
     name: "Fast&Up Reload Mango Zero Sugar Energy Drink | Instant Electrolytes | Healthy & Refreshing Drink",
     category: "energy-drinks",
@@ -1389,7 +1389,7 @@ export const products = [
     isTrending: true,
     description: "Healthy and refreshing zero-sugar energy drink that provides instant hydration with 5 essential electrolytes and vitamins for sustained energy and recovery.",
   },
-            {
+  {
     id: "Bloody Bubbly Litchi Soda",
     name: "Bloody Bubbly Litchi Soda",
     category: "energy-drinks",
@@ -1403,7 +1403,7 @@ export const products = [
     isTrending: true,
     description: "Bloody Bubbly energy drink is a functional beverage and its formula contains high quality.",
   },
-          {
+  {
     id: "Red Bull",
     name: "Red Bull Energy Drink | Ready To Drink Beverage",
     category: "energy-drinks",
@@ -1417,7 +1417,7 @@ export const products = [
     isTrending: true,
     description: "Red Bull energy drink is a functional beverage and its formula contains high quality.",
   },
-        {
+  {
     id: "e12",
     name: "Paper Boat Zero Prebiotic Soda Cranberry Lime, 5g Fibre, Caffeinated Sugar Free Cold Drink",
     category: "energy-drinks",
@@ -1431,7 +1431,7 @@ export const products = [
     isTrending: true,
     description: "Refreshing prebiotic soda with zero sugar and zero calories, featuring a delicious cranberry and lime flavor, perfect for guilt-free indulgence.",
   },
-      {
+  {
     id: "e11",
     name: "Gatorade Blue Bolt Zero Sugar Energy Drink",
     category: "energy-drinks",
@@ -1445,7 +1445,7 @@ export const products = [
     isTrending: true,
     description: "Zero sugar for guilt-free hydration, scientifically formulated for rehydration, enhances performance with electrolytes, trusted global brand for 55 years.",
   },
-    {
+  {
     id: "e10",
     name: "HELL Energy Drink | Classic | Canned Beverage",
     category: "energy-drinks",
@@ -1564,7 +1564,7 @@ export const products = [
   },
 
   // ============ SPARKLING WATER ============
-            {
+  {
     id: "Jimmy's Zero Sugar Jamun Mint Sparkling Water",
     name: "Jimmy's Zero Sugar Jamun Mint Sparkling Water",
     category: "sparkling-water",
@@ -1577,7 +1577,7 @@ export const products = [
     isNew: true,
     description: "Refreshing sparkling water with the unique flavour of jamun and mint, containing zero sugar and zero calories for a guilt-free beverage experience.",
   },
-          {
+  {
     id: "Jimmy's Cocktails Zero Sugar Lime & Lemon Sparkling Water",
     name: "Jimmy's Cocktails Zero Sugar Lime & Lemon Sparkling Water",
     category: "sparkling-water",
@@ -1590,7 +1590,7 @@ export const products = [
     isNew: true,
     description: "Jimmy's Cocktails Zero Sugar Lime & Lemon Sparkling Water.",
   },
-        {
+  {
     id: "Bisleri Soda | Sparkling Mineral Water",
     name: "Bisleri Soda | Sparkling Mineral Water",
     category: "sparkling-water",
@@ -1603,7 +1603,7 @@ export const products = [
     isNew: true,
     description: "Perfect mixer for cocktails, zero calories for guilt-free enjoyment, refreshing fizz for any occasion, trusted quality from a renowned brand.",
   },
-      {
+  {
     id: "Paper Boat Zero Sugar Mango Passion Sparkling Water, Sugar Free Cold Drink",
     name: "Paper Boat Zero Sugar Mango Passion Sparkling Water, Sugar Free Cold Drink",
     category: "sparkling-water",
@@ -1616,7 +1616,7 @@ export const products = [
     isNew: true,
     description: "Refreshing, guilt-free sparkling water with the tropical taste of mango and passionfruit. This zero sugar, zero calorie drink is a perfect alternative to sugary beverages.",
   },
-    {
+  {
     id: "Paper Boat Zero Sugar Green Apple Sparkling Water | Sugar Free Cold Drink",
     name: "Paper Boat Zero Sugar Green Apple Sparkling Water | Sugar Free Cold Drink",
     category: "sparkling-water",
@@ -1720,7 +1720,7 @@ export const products = [
   },
 
   // ============ MILK ============
-          {
+  {
     id: "Amul Lactose Free Milk (Tetra Pack)",
     name: "Amul Lactose Free Milk (Tetra Pack)",
     category: "milk",
@@ -1732,7 +1732,7 @@ export const products = [
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/5d491c1a-25b5-4863-8dd8-0138202e6804/Amul-Lactose-Free-Milk-Tetra-Pack-.jpg",
     description: "Less than 0.1% lactose content, easy to digest for lactose intolerant people, no refrigeration needed until opened.",
   },
-        {
+  {
     id: "Amul Taaza Homogenised Toned Milk (Tetra Pack)",
     name: "Amul Taaza Homogenised Toned Milk (Tetra Pack)",
     category: "milk",
@@ -1744,7 +1744,7 @@ export const products = [
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/860850ec-1695-463f-b983-b98f00ae9e24/Amul-Taaza-Homogenised-Toned-Milk-Tetra-Pack-.jpeg",
     description: "Ready to drink with no boiling required, stays fresh for 180 days when unopened, perfect for tea coffee and breakfast cereals.",
   },
-      {
+  {
     id: "Amul Taaza Toned Fresh Milk | Pouch",
     name: "Amul Taaza Toned Fresh Milk | Pouch",
     category: "milk",
@@ -1756,7 +1756,7 @@ export const products = [
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/2e8a0f88-1038-4fd3-8093-7085a49b473c/Amul-Taaza-Toned-Fresh-Milk-Pouch.jpeg",
     description: "Pasteurized and homogenized for safety, rich in essential nutrients and calcium, perfect for tea and coffee making, zero added preservatives.",
   },
-    {
+  {
     id: "Amul Gold Full Cream Fresh Milk | Pouch",
     name: "Amul Gold Full Cream Fresh Milk | Pouch",
     category: "milk",
@@ -1850,7 +1850,7 @@ export const products = [
 
 
 
-          {
+  {
     id: "Bru Cold Coffee Hazelnut",
     name: "Bru Cold Coffee Hazelnut",
     category: "coffee",
@@ -1865,7 +1865,7 @@ export const products = [
   },
 
 
-        {
+  {
     id: "Blue Tokai Classic Bold Brew Cold Coffee",
     name: "Blue Tokai Classic Bold Brew Cold Coffee",
     category: "coffee",
@@ -1879,7 +1879,7 @@ export const products = [
     description: "Bold and nutty flavor profile, brewed for 18 hours, made with Arabica coffee, convenient ready-to-drink can.",
   },
 
-        {
+  {
     id: "Cravova Classic Cold Coffee",
     name: "Cravova Classic Cold Coffee",
     category: "coffee",
@@ -1893,7 +1893,7 @@ export const products = [
     description: "Classic cold coffee delight, crafted with finest ingredients, rich and satisfying taste, perfect for a refreshing boost.",
   },
 
-      {
+  {
     id: "Sleepy Owl Classic Cold Coffee | Ready to Drink Coffee Beverage",
     name: "Sleepy Owl Classic Cold Coffee | Ready to Drink Coffee Beverage",
     category: "coffee",
@@ -1907,7 +1907,7 @@ export const products = [
     description: "Premium cold brew with signature blend, Made with real milk and natural ingredients, Under 100 calories per serving.",
   },
 
-    {
+  {
     id: "Tata Coffee Grand Ready To Drink Cold Coffee, French Vanilla, Flavoured Milk | Coffee Can",
     name: "Tata Coffee Grand Ready To Drink Cold Coffee, French Vanilla, Flavoured Milk | Coffee Can",
     category: "coffee",
@@ -1921,7 +1921,7 @@ export const products = [
     description: "Rich French Vanilla flavor, convenient ready-to-drink format, perfect for on-the-go enjoyment, crafted by Tata Coffee.",
   },
 
-    {
+  {
     id: "Nescafe Ready To Drink Coffee Flavoured Milk Intense Cafe Cappucino Cold Coffee",
     name: "Nescafe Ready To Drink Coffee Flavoured Milk Intense Cafe Cappucino Cold Coffee",
     category: "coffee",
@@ -1935,7 +1935,7 @@ export const products = [
     description: "The signature taste of Nescafe coffee with an invigorating kick of Cappuccino, for those who like their coffee strong, great anytime drink for when you need an energy boost, experience a richer, flavourful coffee in every sip.",
   },
 
-    {
+  {
     id: "Nescafe Ready To Drink Coffee Flavoured Milk Iced Latte Cold Coffee",
     name: "Nescafe Ready To Drink Coffee Flavoured Milk Iced Latte Cold Coffee",
     category: "coffee",
@@ -2147,7 +2147,7 @@ export const products = [
   // ============ SMOOTHIES ============
 
 
-        {
+  {
     id: "Sunfeast Berry Smoothie with Chia Seeds",
     name: "Sunfeast Berry Smoothie with Chia Seeds",
     category: "smoothies",
@@ -2162,8 +2162,8 @@ export const products = [
   },
 
 
-  
-      {
+
+  {
     id: "Sunfeast Berry Smoothie with Chia Seeds",
     name: "Sunfeast Berry Smoothie with Chia Seeds",
     category: "smoothies",
@@ -2178,7 +2178,7 @@ export const products = [
   },
 
 
-      {
+  {
     id: "Smoodh Toffee Caramel Milk | Flavoured Milk Drink",
     name: "Smoodh Toffee Caramel Milk | Flavoured Milk Drink",
     category: "smoothies",
@@ -2192,7 +2192,7 @@ export const products = [
     description: "Rich toffee caramel flavor, high in calcium and protein, convenient tetra pack, ideal for on-the-go consumption.",
   },
 
-    {
+  {
     id: "Smoodh Chocolate and Hazelnut Milk Drink",
     name: "Smoodh Chocolate and Hazelnut Milk Drink",
     category: "smoothies",
@@ -2207,7 +2207,7 @@ export const products = [
   },
 
 
-    {
+  {
     id: "Smoodh Chocolate Milk Drink | Pet",
     name: "Smoodh Chocolate Milk Drink | Pet",
     category: "smoothies",
@@ -2324,8 +2324,8 @@ export const products = [
 
   // ============ PROTEIN DRINKS ============
 
-  
-          {
+
+  {
     id: "Phab Vanilla & Almond Milkshake 18g Protein Milkshake",
     name: "Phab Vanilla & Almond Milkshake 18g Protein Milkshake",
     category: "protein-drinks",
@@ -2340,7 +2340,7 @@ export const products = [
   },
 
 
-          {
+  {
     id: "Phab Mango Magic 18g Protein Milkshake",
     name: "Phab Mango Magic 18g Protein Milkshake",
     category: "protein-drinks",
@@ -2354,7 +2354,7 @@ export const products = [
     description: "High protein content, no added sugar, gut-friendly prebiotics, trans fat-free.",
   },
 
-        {
+  {
     id: "Epigamia Turbo Chocolate Protein Milkshake",
     name: "Epigamia Turbo Chocolate Protein Milkshake",
     category: "protein-drinks",
@@ -2369,7 +2369,7 @@ export const products = [
   },
 
 
-      {
+  {
     id: "Yoga Bar 26g Protein Shake Cold Coffee |Protein Milkshake with No Added Sugar",
     name: "Yoga Bar 26g Protein Shake Cold Coffee |Protein Milkshake with No Added Sugar",
     category: "protein-drinks",
@@ -2384,7 +2384,7 @@ export const products = [
   },
 
 
-    {
+  {
     id: "Yoga Bar 26g Protein Shake Double Chocolate, No Added Sugar, Rich In Calcium, Low Fat, 210 Calories",
     name: "Yoga Bar 26g Protein Shake Double Chocolate, No Added Sugar, Rich In Calcium, Low Fat, 210 Calories",
     category: "protein-drinks",
@@ -2547,7 +2547,7 @@ export const products = [
   },
 
   // ============ HEALTH DRINKS ============
-  
+
 
   {
     id: "Dabur Amla Immunity Booster Herbal Juice",
@@ -2561,7 +2561,7 @@ export const products = [
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/inventory/product/50c2e67e-8025-4e13-ade2-1b2d4ba30c76-1-_DWbV03nETmqDGyuwTNcMEByKaWMdvO/Dabur-Amla-Immunity-Booster-Herbal-Juice.jpeg",
     description: " amla (Indian gooseberry) shot, rich in natural vitamin C.",
   },
- 
+
 
 
 
@@ -2745,6 +2745,88 @@ export const products = [
     image: "https://images.unsplash.com/photo-1595981267035-7b04ca84a82d?w=500&h=500&fit=crop",
     description: "Bold blackcurrant kombucha with a deep, wine-like tartness.",
   },
+
+
+  //water 
+
+  {
+    id: "Bisleri Packaged Drinking Water",
+    name: "Bisleri Packaged Drinking Water",
+    category: "water",
+    size: "10 L",
+    price: 125,
+    rating: 4.7,
+    reviews: 926,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+    description: "Passed 114 quality tests, 10 stage purification process, with added minerals, double ozonisation.",
+  },
+
+    {
+    id: "Bisleri Packaged Drinking Water 2L",
+    name: "Bisleri Packaged Drinking Water",
+    category: "water",
+    size: "2 L",
+    price: 30,
+    rating: 4.7,
+    reviews: 926,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2500-2500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b/Bisleri-Packaged-Drinking-Water-Bottle.jpg",
+    description: "Passed 114 quality tests, 10 stage purification process, with added minerals, double ozonisation.",
+  },
+
+      {
+    id: "Bisleri Packaged Drinking Water 5L",
+    name: "Bisleri Packaged Drinking Water",
+    category: "water",
+    size: "5 L",
+    price: 75,
+    rating: 4.7,
+    reviews: 926,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c6844aed-07b0-4545-ab18-9d00abe2b518/Bisleri-Packaged-Drinking-Water.jpeg",
+    description: "Passed 90 quality tests, 10 stage purification process, with added minerals, double ozonisation.",
+  },
+
+        {
+    id: "Aquafina Drinking Water Bottle",
+    name: "Aquafina Drinking Water Bottle",
+    category: "water",
+    size: "1 L",
+    price: 20,
+    rating: 4.7,
+    reviews: 926,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/2fdd169f-b509-4769-b01b-795746526e1a/Aquafina-Drinking-Water-Bottle.jpeg",
+    description: "Purity guaranteed, Refreshing taste, Convenient packaging, Trusted brand.",
+  },
+
+        {
+    id: "Bisleri Vedica Himalayan Spring Water Bottle",
+    name: "Bisleri Vedica Himalayan Spring Water Bottle",
+    category: "water",
+    size: "1 L",
+    price: 60,
+    rating: 4.3,
+    reviews: 926,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-4167-4167,pr-true,f-auto,q-40,dpr-2/cms/product_variant/35f163b0-766d-4d5e-b20c-59b8a05b12fc/Bisleri-Vedica-Himalayan-Spring-Water-Bottle.jpeg",
+    description: "Naturally alkaline pH 7.9, rich in essential minerals, bottled at source in Himalayas, refreshing taste.",
+  },
+
+          {
+    id: "Bailley Packaged Drinking Water",
+    name: "Bailley Packaged Drinking Water",
+    category: "water",
+    size: "1 L",
+    price: 20,
+    rating: 4.4,
+    reviews: 765,
+    color: "from-purple-600 to-indigo-700",
+    image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2083-2083,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d7b725c7-a521-47f6-9e72-cd861185b953/Bailley-Packaged-Drinking-Water.jpeg",
+    description: "Pure and safe drinking water, mineral-enhanced for health, convenient 1L bottle size, trusted brand since 1993.",
+  },
+
 ];
 
 export const categories = [
@@ -2761,6 +2843,7 @@ export const categories = [
   { id: "health-drinks", label: "Health Drinks" },
   { id: "flavored-water", label: "Flavored Water" },
   { id: "kombucha", label: "Kombucha" },
+  { id: "water", label: "Water" },
 ];
 
 export const getProductsByCategory = (categoryId) =>
