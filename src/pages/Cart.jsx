@@ -576,7 +576,7 @@ export default function Cart() {
       cart
         .map((item) => {
           const product = products.find((p) => p.id === item.id);
-          return product ? { ...product, qty: item.qty } : null;
+          return product ? { ...product, ...item, qty: item.qty } : null;
         })
         .filter(Boolean),
     [cart]
@@ -646,7 +646,7 @@ export default function Cart() {
           <AnimatePresence>
             {items.map((item) => (
               <motion.div
-                key={item.id}
+                key={item.cartKey || item.id}
                 layout
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -657,9 +657,17 @@ export default function Cart() {
                 <div className="flex items-center gap-2">
                   <Link
                     to={`/product/${item.id}`}
-                    className={`shrink-0 grid place-items-center w-9 h-9 rounded-lg bg-gradient-to-br ${item.color}`}
+                    className={`shrink-0 grid place-items-center w-9 h-9 rounded-lg overflow-hidden bg-gradient-to-br ${item.color}`}
                   >
-                    <BottleSilhouette className="w-4" />
+                    {item.image ? (
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <BottleSilhouette className="w-4" />
+                    )}
                   </Link>
 
                   <div className="flex-1 min-w-0">
@@ -672,7 +680,7 @@ export default function Cart() {
                   </div>
 
                   <button
-                    onClick={() => removeFromCart(item.id)}
+                    onClick={() => removeFromCart(item.cartKey || item.id)}
                     aria-label="Remove item"
                     className="text-ink/30 hover:text-red-500 transition-colors shrink-0"
                   >
@@ -688,7 +696,7 @@ export default function Cart() {
 
                   <div className="flex items-center bg-primary-50 rounded-lg px-0.5 py-0.5 shrink-0">
                     <button
-                      onClick={() => updateQty(item.id, item.qty - 1)}
+                      onClick={() => updateQty(item.cartKey || item.id, item.qty - 1)}
                       className="grid place-items-center w-3.5 h-3.5 rounded-lg bg-white text-primary-700 shadow-softer"
                       aria-label="Decrease quantity"
                     >
@@ -698,7 +706,7 @@ export default function Cart() {
                       {item.qty}
                     </span>
                     <button
-                      onClick={() => updateQty(item.id, item.qty + 1)}
+                      onClick={() => updateQty(item.cartKey || item.id, item.qty + 1)}
                       className="grid place-items-center w-3.5 h-3.5 rounded-lg bg-white text-primary-700 shadow-softer"
                       aria-label="Increase quantity"
                     >

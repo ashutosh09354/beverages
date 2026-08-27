@@ -1,5 +1,63 @@
-// Dummy beverage product data — no backend, local state only.
-// Brand names are fictional (original to this project), avoiding any real trademarks.
+﻿
+
+export const commonPackSizes = [
+  "200ml",
+  "250ml",
+  "300ml",
+  "500ml",
+  "600ml",
+  "750ml",
+  "1L",
+  "1.25L",
+  "1.5L",
+  "2L",
+];
+
+export const teaPackSizes = ["180ml", "200ml", "250ml"];
+
+const buildTeaVariants = (
+  priceMap,
+  imageMap = {},
+  fallbackImage = ""
+) =>
+  Object.keys(priceMap).map((size) => ({
+    size,
+    price: priceMap[size],
+    image: imageMap[size] || fallbackImage,
+  }));
+
+const buildPackVariants = (priceMap, imageMap = {}, fallbackImage = "") =>
+  Object.keys(priceMap).map((size) => ({
+    size,
+    price: priceMap[size],
+    image: imageMap[size] || fallbackImage,
+    
+  }));
+
+const buildJuiceVariants = (priceMap, imageMap = {}, fallbackImage = "") =>
+  Object.keys(priceMap).map((size) => ({
+    size,
+    price: priceMap[size],
+    image: imageMap[size] || fallbackImage,
+  }));
+
+const energyPackSizes = ["150ml", "200ml", "250ml", "300ml", "350ml", "500ml"];
+
+const buildEnergyVariants = (priceMap, imageMap = {}, fallbackImage = "") =>
+  energyPackSizes.map((size) => ({
+    size,
+    price: priceMap[size],
+    image: imageMap[size] || fallbackImage,
+  }));
+
+const waterPackSizes = ["250ml", "500ml", "750ml", "1L", "1.5L", "2L", "5L", "10L", "20L"];
+
+const buildWaterVariants = (priceMap, imageMap = {}, fallbackImage = "") =>
+  waterPackSizes.map((size) => ({
+    size,
+    price: priceMap[size],
+    image: imageMap[size] || fallbackImage,
+  }));
 
 // export const products = [
 //   // Juices
@@ -16,7 +74,7 @@
 //     isBestSeller: true,
 //     isTrending: true,
 //     description:
-//       "Cold-pressed from ripe oranges with no added sugar or preservatives — just pure, sunny flavour in every glass.",
+//       "Cold-pressed from ripe oranges with no added sugar or preservatives â€” just pure, sunny flavour in every glass.",
 //   },
 //   {
 //     id: "j2",
@@ -350,7 +408,7 @@
 //     isBestSeller: true,
 //     isTrending: true,
 //     description:
-//       "Cold-pressed from ripe oranges with no added sugar or preservatives — just pure, sunny flavour in every glass.",
+//       "Cold-pressed from ripe oranges with no added sugar or preservatives â€” just pure, sunny flavour in every glass.",
 //   },
 //   {
 //     id: "j2",
@@ -932,7 +990,21 @@ export const products = [
     category: "juices",
     size: "1 L",
     price: 73,
-    oldPrice: 146,
+    variants: buildJuiceVariants(
+      {
+        "200ml": 20,
+        "1L": 73,
+        "1.5L": 98,
+      },
+      {
+
+        "200ml": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2083-2083,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7f06128c-4ca7-4102-b1f1-e3bb4055f25e/B-Natural-Guava-Juice-Vitamin-C-E.jpg",
+        "1.5L": "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2083-2083,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7f06128c-4ca7-4102-b1f1-e3bb4055f25e/B-Natural-Guava-Juice-Vitamin-C-E.jpg"
+    ),
+  
     rating: 4.7,
     reviews: 312,
     color: "from-orange-400 to-amber-500",
@@ -949,7 +1021,19 @@ export const products = [
     category: "juices",
     size: "1 L",
     price: 120,
-    oldPrice: 150,
+    variants: buildJuiceVariants(
+      {
+
+        "1L": 120,
+        "1.5L": 165,
+      },
+      {
+
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/66ac09ec-a077-402f-a05b-8a1a51db83f4/Real-Fruit-Power-Litchi-Juice.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/66ac09ec-a077-402f-a05b-8a1a51db83f4/Real-Fruit-Power-Litchi-Juice.jpeg"
+    ),
     rating: 4.7,
     reviews: 312,
     color: "from-orange-400 to-amber-500",
@@ -973,7 +1057,7 @@ export const products = [
     isBestSeller: true,
     isTrending: true,
     description:
-      "Cold-pressed from ripe oranges with no added sugar or preservatives — just pure, sunny flavour in every glass.",
+      "Cold-pressed from ripe oranges with no added sugar or preservatives â€” just pure, sunny flavour in every glass.",
   },
   {
     id: "j2",
@@ -981,7 +1065,25 @@ export const products = [
     category: "juices",
     size: "1 L",
     price: 110,
-    oldPrice: 135,
+    variants: buildJuiceVariants(
+      {
+        "125ml": 41,
+        "200ml": 54,
+        "250ml": 63,
+        "500ml": 88,
+        "1L": 110,
+        "1.5L": 148,
+      },
+      {
+        "125ml": "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&h=500&fit=crop",
+        "200ml": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&h=500&fit=crop",
+        "250ml": "https://images.unsplash.com/photo-1563225408-07f3f4f97f7e?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&h=500&fit=crop",
+        "1L": "https://img.lazcdn.com/g/p/0f8bed0f4fc318f943b4ef7f98b44b7f.png_960x960q80.png_.webp",
+        "1.5L": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&h=500&fit=crop",
+      },
+      "https://img.lazcdn.com/g/p/0f8bed0f4fc318f943b4ef7f98b44b7f.png_960x960q80.png_.webp"
+    ),
     rating: 4.5,
     reviews: 198,
     color: "from-rose-300 to-red-400",
@@ -995,6 +1097,18 @@ export const products = [
     category: "juices",
     size: "750 ml",
     price: 95,
+    variants: buildJuiceVariants(
+      {
+    
+        "1L": 92,
+        "1.5L": 125,
+      },
+      {
+        "1L": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/bbea2a7d-3bc7-4818-8725-8572c5663b0d.png?bg_token=color.background.quaternary",
+        "1.5L": "https://images.unsplash.com/photo-1606214174585-fe31582dc6ee?w=500&h=500&fit=crop",
+      },
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/bbea2a7d-3bc7-4818-8725-8572c5663b0d.png?bg_token=color.background.quaternary"
+    ),
     rating: 4.6,
     reviews: 145,
     color: "from-yellow-400 to-orange-400",
@@ -1007,6 +1121,17 @@ export const products = [
     category: "juices",
     size: "1 L",
     price: 125,
+    variants: buildJuiceVariants(
+      {
+        "1L": 125,
+        "1.5L": 168,
+      },
+      {
+        "1L": "https://m.media-amazon.com/images/I/71lCZimd7WL._SL1500_.jpg",
+        "1.5L": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=500&h=500&fit=crop",
+      },
+      "https://m.media-amazon.com/images/I/71lCZimd7WL._SL1500_.jpg"
+    ),
     rating: 4.6,
     reviews: 88,
     color: "from-rose-500 to-red-600",
@@ -1031,6 +1156,25 @@ export const products = [
     category: "juices",
     size: "750 ml",
     price: 150,
+    variants: buildJuiceVariants(
+      {
+        "125ml": 52,
+        "200ml": 68,
+        "250ml": 79,
+        "500ml": 110,
+        "1L": 150,
+        "1.5L": 198,
+      },
+      {
+        "125ml": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&h=500&fit=crop",
+        "200ml": "https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=500&h=500&fit=crop",
+        "250ml": "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&h=500&fit=crop",
+        "1L": "https://m.media-amazon.com/images/I/51UN+ndU6WL.jpg",
+        "1.5L": "https://images.unsplash.com/photo-1542444459-db37f9ef6da5?w=500&h=500&fit=crop",
+      },
+      "https://m.media-amazon.com/images/I/51UN+ndU6WL.jpg"
+    ),
     rating: 4.5,
     reviews: 132,
     color: "from-yellow-300 to-amber-400",
@@ -1043,6 +1187,25 @@ export const products = [
     category: "juices",
     size: "1 L",
     price: 75,
+    variants: buildJuiceVariants(
+      {
+        "125ml": 29,
+        "200ml": 39,
+        "250ml": 46,
+        "500ml": 63,
+        "1L": 75,
+        "1.5L": 101,
+      },
+      {
+        "125ml": "https://images.unsplash.com/photo-1555126634-323283e090fa?w=500&h=500&fit=crop",
+        "200ml": "https://images.unsplash.com/photo-1497534446932-c925b458314e?w=500&h=500&fit=crop",
+        "250ml": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&h=500&fit=crop",
+        "1L": "https://m.media-amazon.com/images/I/81NkQ7Lba+L._SL1500_.jpg",
+        "1.5L": "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=500&h=500&fit=crop",
+      },
+      "https://m.media-amazon.com/images/I/81NkQ7Lba+L._SL1500_.jpg"
+    ),
     oldPrice: 140,
     rating: 4.4,
     reviews: 97,
@@ -1057,6 +1220,25 @@ export const products = [
     category: "juices",
     size: "750 ml",
     price: 85,
+    variants: buildJuiceVariants(
+      {
+        "125ml": 31,
+        "200ml": 42,
+        "250ml": 49,
+        "500ml": 68,
+        "1L": 85,
+        "1.5L": 115,
+      },
+      {
+        "125ml": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=500&h=500&fit=crop",
+        "200ml": "https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?w=500&h=500&fit=crop",
+        "250ml": "https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1524594154908-edd665d6d95a?w=500&h=500&fit=crop",
+        "1L": "https://freshlyfruits.in/wp-content/uploads/2026/01/Watermelon-Juice-1024x683.png",
+        "1.5L": "https://images.unsplash.com/photo-1547592180-85f173990554?w=500&h=500&fit=crop",
+      },
+      "https://freshlyfruits.in/wp-content/uploads/2026/01/Watermelon-Juice-1024x683.png"
+    ),
     rating: 4.6,
     reviews: 154,
     color: "from-red-300 to-pink-400",
@@ -1077,6 +1259,33 @@ export const products = [
     reviews: 520,
     color: "from-red-500 to-rose-600",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d42b783e-3b4f-4da7-8535-2a32f9dd49e1/Coca-Cola-Diet-Coke-Soft-Drink-Can-No-Calories-Fizzy.jpeg",
+    // variants: buildPackVariants(
+      // {
+      //   "200ml": 25,
+      //   "250ml": 30,
+      //   "300ml": 35,
+      //   "500ml": 45,
+      //   "600ml": 50,
+      //   "750ml": 55,
+      //   "1L": 65,
+      //   "1.25L": 75,
+      //   "1.5L": 85,
+      //   "2L": 95,
+      // },
+      // {
+      //   "200ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d42b783e-3b4f-4da7-8535-2a32f9dd49e1/Coca-Cola-Diet-Coke-Soft-Drink-Can-No-Calories-Fizzy.jpeg",
+      //   "250ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d42b783e-3b4f-4da7-8535-2a32f9dd49e1/Coca-Cola-Diet-Coke-Soft-Drink-Can-No-Calories-Fizzy.jpeg",
+      //   "300ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d42b783e-3b4f-4da7-8535-2a32f9dd49e1/Coca-Cola-Diet-Coke-Soft-Drink-Can-No-Calories-Fizzy.jpeg",
+      //   "500ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/aa3aa71a-e094-4547-9357-cd6e73c737f2/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "600ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/aa3aa71a-e094-4547-9357-cd6e73c737f2/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "750ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/aa3aa71a-e094-4547-9357-cd6e73c737f2/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "1.25L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "1.5L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      //   "2L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+      // },
+    //   "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3000-3000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d42b783e-3b4f-4da7-8535-2a32f9dd49e1/Coca-Cola-Diet-Coke-Soft-Drink-Can-No-Calories-Fizzy.jpeg"
+    // ),
     isBestSeller: true,
     description: "Classic bold cola flavour with a crisp, refreshing fizz.",
   },
@@ -1090,6 +1299,22 @@ export const products = [
     reviews: 210,
     color: "from-orange-400 to-yellow-400",
     image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&h=500&fit=crop",
+    // variants: buildPackVariants(
+    //   {
+    //     "200ml": 22,
+    //     "250ml": 26,
+    //     "300ml": 30,
+    //     "500ml": 38,
+    //     "600ml": 42,
+    //     "750ml": 45,
+    //     "1L": 55,
+    //     "1.25L": 65,
+    //     "1.5L": 75,
+    //     "2L": 85,
+    //   },
+    //   {},
+    //   "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&h=500&fit=crop"
+    // ),
     isTrending: true,
     description: "Zesty citrus soda with a bright, bubbly finish.",
   },
@@ -1103,11 +1328,38 @@ export const products = [
     reviews: 210,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fd2659fa-e385-4586-a60c-17df7c67b5de/Pepsi-Soft-Drink-Refreshing-Carbonated-Beverage.jpeg",
+    variants: buildPackVariants(
+      {
+        "200ml": 24,
+        "250ml": 28,
+        "300ml": 32,
+        "500ml": 40,
+        "600ml": 45,
+        "750ml": 48,
+        "1L": 58,
+        "1.25L": 68,
+    
+        "2L": 88,
+      },
+      {
+        "200ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fd2659fa-e385-4586-a60c-17df7c67b5de/Pepsi-Soft-Drink-Refreshing-Carbonated-Beverage.jpeg",
+        "250ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fd2659fa-e385-4586-a60c-17df7c67b5de/Pepsi-Soft-Drink-Refreshing-Carbonated-Beverage.jpeg",
+        "300ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fd2659fa-e385-4586-a60c-17df7c67b5de/Pepsi-Soft-Drink-Refreshing-Carbonated-Beverage.jpeg",
+        "500ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        "600ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        "750ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        "1.25L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        // "1.5L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+        "2L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fd2659fa-e385-4586-a60c-17df7c67b5de/Pepsi-Soft-Drink-Refreshing-Carbonated-Beverage.jpeg"
+    ),
     isTrending: true,
     description: "Zesty citrus soda with a bright, bubbly finish.",
   },
   {
-    id: "s202",
+    id: "Coca-Cola Soft Drink",
     name: "Coca-Cola Soft Drink | Carbonated Beverage ",
     category: "soft-drinks",
     size: "750 ml",
@@ -1116,6 +1368,16 @@ export const products = [
     reviews: 210,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/aa3aa71a-e094-4547-9357-cd6e73c737f2/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+    variants: buildPackVariants(
+      {
+        "200ml": 20,
+        "750ml": 42,
+        "1.25L": 50,
+        "2L": 82,
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/aa3aa71a-e094-4547-9357-cd6e73c737f2/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg"
+    ),
     isTrending: true,
     description: "Zesty citrus soda with a bright, bubbly finish.",
   },
@@ -1129,6 +1391,19 @@ export const products = [
     reviews: 210,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg",
+    variants: buildPackVariants(
+      {
+        "200ml": 20,
+        
+        "750ml": 35,
+        
+        "1.25L": 50,
+      
+        "2L": 90,
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/7b4ef8d3-619b-435a-963a-a648e8935edf/Coca-Cola-Soft-Drink-Carbonated-Beverage.jpeg"
+    ),
     isTrending: true,
     description: "Iconic original cola taste since 1886, perfect for parties and gatherings, recyclable PET packaging, best served chilled",
   },
@@ -1142,6 +1417,16 @@ export const products = [
     reviews: 350,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg",
+    variants: buildPackVariants(
+      {
+        "400ml": 20,
+        "750ml": 35,
+        "1.25L": 50,
+        "2L": 88,
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1bb673a8-db69-4a6b-9e37-61968fa5b6c3/Pepsi-Soft-Drink-Carbonated-Beverage.jpeg"
+    ),
     isTrending: true,
     description: "Refreshing cola taste, Contains caffeine, Perfect for parties, 750 ml bottle",
   },
@@ -1155,6 +1440,16 @@ export const products = [
     reviews: 345,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/642e1be7-cfc1-4ade-bfd8-5e02d810c266/Appy-Fizz-Apple-Soft-Drink-Can-Fizzy-Refreshing.jpeg",
+    variants: buildPackVariants(
+      {
+        "200ml": 24,
+
+      },
+      {
+        "200ml": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/642e1be7-cfc1-4ade-bfd8-5e02d810c266/Appy-Fizz-Apple-Soft-Drink-Can-Fizzy-Refreshing.jpeg",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/642e1be7-cfc1-4ade-bfd8-5e02d810c266/Appy-Fizz-Apple-Soft-Drink-Can-Fizzy-Refreshing.jpeg"
+    ),
     isTrending: true,
     description: "Apple-flavored sparkling drink, Refreshing and fizzy, Perfect for any occasion, Convenient 250 ml can",
   },
@@ -1168,6 +1463,15 @@ export const products = [
     reviews: 385,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/da69b767-b2b2-41a1-b187-97d6142030ed/Appy-Fizz-Apple-Soft-Drink-Pet-Fizzy-Refreshing.jpeg",
+    variants: buildPackVariants(
+      {
+        "750ml": 40,
+        "220L": 20,
+
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/da69b767-b2b2-41a1-b187-97d6142030ed/Appy-Fizz-Apple-Soft-Drink-Pet-Fizzy-Refreshing.jpeg"
+    ),
     isTrending: true,
     description: "Apple-flavored sparkling drink, Refreshing and fizzy, Perfect for any occasion, Convenient 250 ml Pet bottle",
   },
@@ -1181,6 +1485,15 @@ export const products = [
     reviews: 185,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2048-2048,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d97bb751-25ce-4fba-bca2-f7fa248c5a8e/Bombay-Banta-Masala-Cola-Soda-Spiced-Refreshing.jpg",
+    variants: buildPackVariants(
+      {
+        
+        "250ml": 20,
+        
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2048-2048,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d97bb751-25ce-4fba-bca2-f7fa248c5a8e/Bombay-Banta-Masala-Cola-Soda-Spiced-Refreshing.jpg"
+    ),
     isTrending: true,
     description: "Unique masala cola fusion drink, perfect blend of spices and fizz, refreshing indian-inspired beverage",
   },
@@ -1220,6 +1533,7 @@ export const products = [
     reviews: 285,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/3870631f-feac-4717-842c-ec46b274d50c/Sprite-Lemon-Soft-Drink-Can-Carbonated-Beverage.jpeg",
+
     isTrending: true,
     description: "Refreshing lemon-lime flavor, caffeine-free enjoyment, perfect for any occasion, convenient 300 ml can",
   },
@@ -1233,6 +1547,16 @@ export const products = [
     reviews: 244,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ec1adb03-fe70-4059-94f6-a5815d057a77/Thums-Up-Soft-Drink-Carbonated-Beverage.jpeg",
+    variants: buildPackVariants(
+      {
+
+        "750ml": 35,
+        "1.25L": 50,
+        "2L": 86,
+      },
+      {},
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ec1adb03-fe70-4059-94f6-a5815d057a77/Thums-Up-Soft-Drink-Carbonated-Beverage.jpeg"
+    ),
     isTrending: true,
     description: "Strong taste with fizzy punch, spicy and refreshing cola flavor, recyclable packaging for sustainability, perfect for on-the-go enjoyment",
   },
@@ -1246,6 +1570,7 @@ export const products = [
     reviews: 244,
     color: "from-orange-400 to-yellow-400",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/139f4f61-6a51-46f2-b603-3bb9f2ddf1e6/Thums-Up-Soft-Drink-Carbonated-Beverage.jpeg",
+
     isTrending: true,
     description: "Strong taste with fizzy punch, spicy and refreshing cola flavor, recyclable packaging for sustainability, perfect for on-the-go enjoyment",
   },
@@ -1266,7 +1591,6 @@ export const products = [
     id: "65478",
     name: "Mountain Dew Citrus Soft Drink",
     category: "soft-drinks",
-    size: "750 ml ",
     price: 40,
     rating: 4.2,
     reviews: 294,
@@ -1292,13 +1616,13 @@ export const products = [
     id: "s3",
     name: "Monster Energy Drink | Ready To Drink Beverage",
     category: "energy-drinks",
-    size: "350 ml",
     price: 100,
     oldPrice: 125,
     rating: 4.2,
     reviews: 167,
     color: "from-fuchsia-400 to-pink-500",
     image: "https://images.unsplash.com/photo-1622543925917-763c34d1a86e?w=500&h=500&fit=crop",
+
     isNew: true,
     description: "A fruity berry soda with just the right amount of sweetness.",
   },
@@ -1306,13 +1630,13 @@ export const products = [
     id: "s31",
     name: "Monster Energy Ultra Zero Sugar | Carbonated Caffeinated Beverage",
     category: "energy-drinks",
-    size: "350 ml",
     price: 111,
     oldPrice: 125,
     rating: 4.2,
     reviews: 167,
     color: "from-fuchsia-400 to-pink-500",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/6f850844-121e-4680-9b1d-a55ed7cab666/Monster-Energy-Ultra-Zero-Sugar-Carbonated-Caffeinated-Beverage.jpeg",
+
     isNew: true,
     description: "Zero sugar formula for guilt-free energy, Enhanced with essential B vitamins complex, Refreshing mixed fruit flavor profile",
   },
@@ -1429,6 +1753,10 @@ export const products = [
     category: "energy-drinks",
     size: "250 ml",
     price: 65,
+    variants: buildEnergyVariants(
+
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-3600-3600,pr-true,f-auto,q-40,dpr-2/cms/product_variant/55d5c31b-440c-4a4c-ba71-ddeb6294ced4/Bloody-Bubbly-Litchi-Soda.jpeg"
+    ),
     rating: 4.1,
     reviews: 450,
     color: "from-sky-500 to-blue-600",
@@ -1981,7 +2309,7 @@ export const products = [
     color: "from-amber-700 to-amber-900",
     image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/183a17a6-0058-4e96-b57e-e35dece5e982/Nescafe-Ready-To-Drink-Coffee-Flavoured-Milk-Iced-Latte-Cold-Coffee.jpeg",
     isTrending: true,
-    description: "The signature taste of cold coffee by NESCAFE, with a twist of Latte, great anytime drink for when you need an energy boost, experience a mellower, richer coffee in every sip, also available in Intense Café, Choco Mocha and Hazelnut.",
+    description: "The signature taste of cold coffee by NESCAFE, with a twist of Latte, great anytime drink for when you need an energy boost, experience a mellower, richer coffee in every sip, also available in Intense CafÃ©, Choco Mocha and Hazelnut.",
   },
   {
     id: "c1",
@@ -2114,45 +2442,68 @@ export const products = [
   //   image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500&h=500&fit=crop",
   //   description: "Soothing chamomile tea lightly sweetened with honey.",
   // },
-  {
-    id: "t4",
-    name: "Masala Chai Latte",
-    category: "tea",
-    size: "300 ml",
-    price: 75,
-    rating: 4.7,
-    reviews: 188,
-    color: "from-amber-400 to-orange-500",
-    image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500&h=500&fit=crop",
-    isBestSeller: true,
-    description: "Spiced milk tea brewed with cardamom, ginger and cloves.",
-  },
-  {
-    id: "t5",
-    name: "Lemon Ginger Tea",
-    category: "tea",
-    size: "500 ml",
-    price: 78,
-    rating: 4.4,
-    reviews: 90,
-    color: "from-yellow-300 to-lime-400",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop",
-    description: "Zingy lemon and ginger tea, served chilled for a bright lift.",
-  },
-  {
-    id: "t6",
-    name: "Hibiscus Iced Tea",
-    category: "tea",
-    size: "500 ml",
-    price: 82,
-    oldPrice: 95,
-    rating: 4.5,
-    reviews: 77,
-    color: "from-rose-400 to-pink-500",
-    image: "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&h=500&fit=crop",
-    isNew: true,
-    description: "Tart hibiscus iced tea with a deep ruby colour.",
-  },
+{
+  id: "t4",
+  name: "Masala Chai Latte",
+  category: "tea",
+  size: "250ml",
+  price: 75,
+
+  variants: buildTeaVariants(
+    {
+      "180ml": 55,
+      "200ml": 65,
+      "250ml": 75,
+    }
+  ),
+
+  rating: 4.7,
+  reviews: 188,
+  color: "from-amber-400 to-orange-500",
+  image: "https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=500&h=500&fit=crop",
+  isBestSeller: true,
+  description: "Spiced milk tea brewed with cardamom, ginger and cloves.",
+},
+{
+  id: "t5",
+  name: "Lemon Ginger Tea",
+  category: "tea",
+  size: "250ml",
+  price: 78,
+
+  variants: buildTeaVariants({
+    "180ml": 58,
+    "200ml": 68,
+    "250ml": 78,
+  }),
+
+  rating: 4.4,
+  reviews: 90,
+  color: "from-yellow-300 to-lime-400",
+  image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=500&h=500&fit=crop",
+  description: "Zingy lemon and ginger tea, served chilled for a bright lift.",
+},
+{
+  id: "t6",
+  name: "Hibiscus Iced Tea",
+  category: "tea",
+  size: "250ml",
+  price: 82,
+
+  variants: buildTeaVariants({
+    "180ml": 60,
+    "200ml": 70,
+    "250ml": 82,
+  }),
+
+  oldPrice: 95,
+  rating: 4.5,
+  reviews: 77,
+  color: "from-rose-400 to-pink-500",
+  image: "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?w=500&h=500&fit=crop",
+  isNew: true,
+  description: "Tart hibiscus iced tea with a deep ruby colour.",
+},
   // {
   //   id: "t7",
   //   name: "Earl Grey Iced Tea",
@@ -2337,7 +2688,7 @@ export const products = [
   //   color: "from-yellow-300 to-lime-400",
   //   image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&h=500&fit=crop",
   //   isNew: true,
-  //   description: "Pineapple and coconut milk blended for a beachy piña-colada feel.",
+  //   description: "Pineapple and coconut milk blended for a beachy piÃ±a-colada feel.",
   // },
 
   // ============ PROTEIN DRINKS ============
@@ -2580,6 +2931,208 @@ export const products = [
     description: " amla (Indian gooseberry) shot, rich in natural vitamin C.",
   },
 
+  {
+  id: "Horlicks Classic Malt 500g",
+  name: "Horlicks Classic Malt",
+  category: "health-drinks",
+  size: "500g",
+  price: 250,
+  rating: 4.6,
+  reviews: 320,
+  color: "from-amber-300 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1ce9d53c-ef4d-49f5-8361-88fd0adc014d/Horlicks-Nutrition-Drink-Jar-Superfoods.jpeg",
+  isBestSeller: true,
+  description:
+    "Classic Horlicks malt drink with a rich, delicious taste.",
+},
+
+  {
+  id: "Horlicks Classic Malt 1kg",
+  name: "Horlicks Classic Malt",
+  category: "health-drinks",
+  size: "1kg",
+  price: 500,
+  rating: 4.6,
+  reviews: 940,
+  color: "from-amber-300 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/1ce9d53c-ef4d-49f5-8361-88fd0adc014d/Horlicks-Nutrition-Drink-Jar-Superfoods.jpeg",
+  isBestSeller: true,
+  description:
+    "Classic Horlicks malt drink with a rich, delicious taste.",
+},
+
+  {
+  id: "Horlicks Nutrition Drink Jar | Superfoods 200g",
+  name: "Horlicks Nutrition Drink Jar | Superfoods",
+  category: "health-drinks",
+  size: "200g",
+  price: 110,
+  rating: 4.6,
+  reviews: 460,
+  color: "from-amber-300 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/74d66fa7-2758-4330-a241-2083ea92c7f8/Horlicks-Nutrition-Drink-Jar-Superfoods.jpeg",
+  isBestSeller: true,
+  description:
+    "Classic Horlicks malt drink with a rich, delicious taste.",
+},
+
+  {
+  id: "Horlicks Junior Vanilla Flavoured Drink Mix | For 2 - 6 years Kids",
+  name: "Horlicks Junior Vanilla Flavoured Drink Mix | For 2 - 6 years Kids",
+  category: "health-drinks",
+  size: "500g",
+  price: 329,
+  rating: 4.6,
+  reviews: 460,
+  color: "from-amber-300 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/2bc2a5ad-b1bc-428b-9a4e-d6e1b85a08e6/Horlicks-Junior-Vanilla-Flavoured-Drink-Mix-For-2-6-years-Kids.jpg",
+  isBestSeller: true,
+  description:
+    "Supports optimal brain development, enhances physical growth and immunity, complete A to Z nutrition for toddlers",
+},
+
+
+
+
+
+{
+  id: "Bournvita 5 Star Magic 500g",
+  name: "Bournvita Chocolate Nutrition Drink",
+  category: "health-drinks",
+  size: "500g",
+  price: 250,
+  rating: 4.5,
+  reviews: 520,
+  color: "from-amber-700 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1100-1100,pr-true,f-auto,q-40,dpr-2/cms/product_variant/f0d5f8df-69a6-4f44-b163-16e835611aa0/Bournvita-Chocolate-Nutrition-Drink.jpg",
+  isBestSeller: true,
+  description:
+    "Trusted and loved for more than 75 years, Bournvita is a scientifically designed cereal-based beverage mix, crafted by nutritionists and food scientists. Contains 14 essential micronutrients",},
+
+{
+  id: "Bournvita 5 Star Magic 1kg",
+  name: "Bournvita Chocolate Nutrition Drink Jar",
+  category: "health-drinks",
+  size: "1kg",
+  price: 485,
+  rating: 4.4,
+  reviews: 890,
+  color: "from-amber-700 to-yellow-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1100-1100,pr-true,f-auto,q-40,dpr-2/cms/product_variant/dc1194ad-44bb-4fa2-b405-9d7e51bb9686/Bournvita-Chocolate-Nutrition-Drink-Jar.jpg",
+  isBestSeller: true,
+  description:
+    "Trusted and loved for more than 75 years, Bournvita is a scientifically designed cereal-based beverage mix, crafted by nutritionists and food scientists. Contains 14 essential micronutrients",},
+
+
+{
+  id: "Complan creamy classic Drink Mix 500g",
+  name: "Complan creamy classic Drink Mix | For 5+ year kids",
+  category: "health-drinks",
+  size: "500g",
+  price: 285,
+  rating: 4.5,
+  reviews: 620,
+  color: "from-amber-700 to-orange-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2250-2250,pr-true,f-auto,q-40,dpr-2/cms/product_variant/abac6401-8311-45a0-9ac0-4405cf402a2b/Complan-Creamy-Classic-Flavour-Drink-Mix-For-5-years-Kids.jpg",
+  isBestSeller: true,
+  description:
+    "Complan Royale Chocolate Drink Mix with a rich chocolate taste, specially formulated for children aged 5 years and above.",
+},
+
+{
+  id: "Complan Royale Chocolate Drink Mix 1kg",
+  name: "Complan Royale Chocolate Drink Mix | For 5+ year kids",
+  category: "health-drinks",
+  size: "1kg",
+  price: 540,
+  rating: 4.5,
+  reviews: 890,
+  color: "from-amber-700 to-orange-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2250-2250,pr-true,f-auto,q-40,dpr-2/cms/product_variant/f043f9fe-ecb8-4d56-8115-f239082f0f13/Complan-Royale-Chocolate-Drink-Mix-For-5-year-kids.jpg",
+  isBestSeller: true,
+  description:
+    "Complan Royale Chocolate Drink Mix with a rich chocolate taste, specially formulated for children aged 5 years and above.",
+},
+
+
+{
+  id: "Protinex Original 400g",
+  name: "Protinex Original",
+  category: "health-drinks",
+  size: "400g",
+  price: 480,
+  rating: 4.5,
+  reviews: 540,
+  color: "from-orange-400 to-amber-600",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/eba6e4fe-343c-46ab-984d-49566c39ab45/Protinex-Rich-Chocolate-Drink-Mix.jpeg",
+  isBestSeller: true,
+  description:
+    "Protinex Original nutrition drink mix with a rich taste and protein-focused nutrition.",
+},
+
+{
+  id: "Protinex Original 1kg",
+  name: "Protinex Original",
+  category: "health-drinks",
+  size: "1kg",
+  price: 1120,
+  rating: 4.5,
+  reviews: 540,
+  color: "from-orange-400 to-amber-600",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/fccb4aeb-91b5-4c28-8147-4b9c4a254d93/Protinex-Rich-Chocolate-Drink-Mix.jpeg",
+  isBestSeller: true,
+  description:
+    "Protinex Original nutrition drink mix with a rich taste and protein-focused nutrition.",
+},
+
+
+{
+  id: "Ensure Vanilla 200g",
+  name: "Ensure Vanilla",
+  category: "health-drinks",
+  size: "200g",
+  price: 350,
+  rating: 4.5,
+  reviews: 420,
+  color: "from-yellow-300 to-amber-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1500-1500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/6134f8a7-1cfd-40ba-9514-f9c0154ab2a6/ENSURE-Balanced-Vanilla-Drink-Mix.jpeg",
+  isBestSeller: true,
+  description:
+    "Ensure Vanilla nutrition drink with a smooth, creamy taste and balanced nutrition.",
+},
+
+{
+  id: "Ensure Vanilla 375g",
+  name: "Ensure Vanilla",
+  category: "health-drinks",
+  size: "375g",
+  price: 780,
+  rating: 4.5,
+  reviews: 580,
+  color: "from-yellow-300 to-amber-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1500-1500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/19f03c42-b10a-46b0-aaf5-c658cc6ba849/ENSURE-Balanced-Chocolate-Drink-Mix.jpeg",
+  isBestSeller: true,
+  description:
+    "Ensure Vanilla nutrition drink with a smooth, creamy taste and balanced nutrition.",
+},
+
+{
+  id: "Ensure Vanilla 950g",
+  name: "Ensure Vanilla",
+  category: "health-drinks",
+  size: "950g",
+  price: 1450,
+  rating: 4.5,
+  reviews: 850,
+  color: "from-yellow-300 to-amber-500",
+  image: "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1500-1500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/20d82762-5238-4f14-8d77-f292e4c3fc15/ENSURE-Vanilla-Drink-Mix.jpeg",
+  isBestSeller: true,
+  description:
+    "Ensure Vanilla nutrition drink with a smooth, creamy taste and balanced nutrition.",
+},
+
+
+
 
 
 
@@ -2773,6 +3326,31 @@ export const products = [
     category: "water",
     size: "10 L",
     price: 125,
+    variants: buildWaterVariants(
+      {
+        "250ml": 10,
+        "500ml": 14,
+        "750ml": 18,
+        "1L": 20,
+        "1.5L": 26,
+        "2L": 30,
+        "5L": 72,
+        "10L": 125,
+        "20L": 220,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2500-2500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b/Bisleri-Packaged-Drinking-Water-Bottle.jpg",
+        "5L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c6844aed-07b0-4545-ab18-9d00abe2b518/Bisleri-Packaged-Drinking-Water.jpeg",
+        "10L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg"
+    ),
     rating: 4.7,
     reviews: 926,
     color: "from-purple-600 to-indigo-700",
@@ -2786,6 +3364,31 @@ export const products = [
     category: "water",
     size: "2 L",
     price: 30,
+    variants: buildWaterVariants(
+      {
+        "250ml": 10,
+        "500ml": 14,
+        "750ml": 18,
+        "1L": 20,
+        "1.5L": 26,
+        "2L": 30,
+        "5L": 72,
+        "10L": 125,
+        "20L": 220,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2500-2500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b/Bisleri-Packaged-Drinking-Water-Bottle.jpg",
+        "5L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c6844aed-07b0-4545-ab18-9d00abe2b518/Bisleri-Packaged-Drinking-Water.jpeg",
+        "10L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2500-2500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b/Bisleri-Packaged-Drinking-Water-Bottle.jpg"
+    ),
     rating: 4.7,
     reviews: 926,
     color: "from-purple-600 to-indigo-700",
@@ -2799,6 +3402,31 @@ export const products = [
     category: "water",
     size: "5 L",
     price: 75,
+    variants: buildWaterVariants(
+      {
+        "250ml": 10,
+        "500ml": 14,
+        "750ml": 18,
+        "1L": 20,
+        "1.5L": 26,
+        "2L": 30,
+        "5L": 75,
+        "10L": 125,
+        "20L": 220,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2500-2500,pr-true,f-auto,q-40,dpr-2/cms/product_variant/ff3743d9-aedf-49a7-b0ed-5713e283e18b/Bisleri-Packaged-Drinking-Water-Bottle.jpg",
+        "5L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c6844aed-07b0-4545-ab18-9d00abe2b518/Bisleri-Packaged-Drinking-Water.jpeg",
+        "10L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/47d205bd-542b-4fe3-9ac4-663662756e3a/Bisleri-Packaged-Drinking-Water.jpeg",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1000-1000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c6844aed-07b0-4545-ab18-9d00abe2b518/Bisleri-Packaged-Drinking-Water.jpeg"
+    ),
     rating: 4.7,
     reviews: 926,
     color: "from-purple-600 to-indigo-700",
@@ -2812,6 +3440,31 @@ export const products = [
     category: "water",
     size: "1 L",
     price: 20,
+    variants: buildWaterVariants(
+      {
+        "250ml": 9,
+        "500ml": 12,
+        "750ml": 16,
+        "1L": 20,
+        "1.5L": 25,
+        "2L": 29,
+        "5L": 68,
+        "10L": 118,
+        "20L": 210,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/2fdd169f-b509-4769-b01b-795746526e1a/Aquafina-Drinking-Water-Bottle.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+        "5L": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "10L": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-1200-1200,pr-true,f-auto,q-40,dpr-2/cms/product_variant/2fdd169f-b509-4769-b01b-795746526e1a/Aquafina-Drinking-Water-Bottle.jpeg"
+    ),
     rating: 4.7,
     reviews: 926,
     color: "from-purple-600 to-indigo-700",
@@ -2825,6 +3478,31 @@ export const products = [
     category: "water",
     size: "1 L",
     price: 60,
+    variants: buildWaterVariants(
+      {
+        "250ml": 18,
+        "500ml": 28,
+        "750ml": 38,
+        "1L": 60,
+        "1.5L": 82,
+        "2L": 96,
+        "5L": 210,
+        "10L": 360,
+        "20L": 620,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-4167-4167,pr-true,f-auto,q-40,dpr-2/cms/product_variant/35f163b0-766d-4d5e-b20c-59b8a05b12fc/Bisleri-Vedica-Himalayan-Spring-Water-Bottle.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+        "5L": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "10L": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-4167-4167,pr-true,f-auto,q-40,dpr-2/cms/product_variant/35f163b0-766d-4d5e-b20c-59b8a05b12fc/Bisleri-Vedica-Himalayan-Spring-Water-Bottle.jpeg"
+    ),
     rating: 4.3,
     reviews: 926,
     color: "from-purple-600 to-indigo-700",
@@ -2838,6 +3516,31 @@ export const products = [
     category: "water",
     size: "1 L",
     price: 20,
+    variants: buildWaterVariants(
+      {
+        "250ml": 9,
+        "500ml": 12,
+        "750ml": 15,
+        "1L": 20,
+        "1.5L": 24,
+        "2L": 29,
+        "5L": 64,
+        "10L": 112,
+        "20L": 198,
+      },
+      {
+        "250ml": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "500ml": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "750ml": "https://images.unsplash.com/photo-1503264116251-35a269479413?w=500&h=500&fit=crop",
+        "1L": "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2083-2083,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d7b725c7-a521-47f6-9e72-cd861185b953/Bailley-Packaged-Drinking-Water.jpeg",
+        "1.5L": "https://images.unsplash.com/photo-1558030006-450675393462?w=500&h=500&fit=crop",
+        "2L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+        "5L": "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=500&h=500&fit=crop",
+        "10L": "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=500&h=500&fit=crop",
+        "20L": "https://images.unsplash.com/photo-1564182842519-8b7d5a0d3b8a?w=500&h=500&fit=crop",
+      },
+      "https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2083-2083,pr-true,f-auto,q-40,dpr-2/cms/product_variant/d7b725c7-a521-47f6-9e72-cd861185b953/Bailley-Packaged-Drinking-Water.jpeg"
+    ),
     rating: 4.4,
     reviews: 765,
     color: "from-purple-600 to-indigo-700",
@@ -2875,3 +3578,4 @@ export const searchProducts = (query) =>
   products.filter((p) =>
     p.name.toLowerCase().includes(query.toLowerCase())
   );
+

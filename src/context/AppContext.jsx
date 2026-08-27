@@ -7,27 +7,32 @@ export function AppProvider({ children }) {
   const [wishlist, setWishlist] = useState([]); // [id]
 
   const addToCart = (product, qty = 1) => {
+    const cartKey = product.cartKey || product.id;
     setCart((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+      const existing = prev.find((item) => (item.cartKey || item.id) === cartKey);
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id ? { ...item, qty: item.qty + qty } : item
+          (item.cartKey || item.id) === cartKey
+            ? { ...item, ...product, cartKey, qty: item.qty + qty }
+            : item
         );
       }
-      return [...prev, { id: product.id, qty }];
+      return [...prev, { ...product, cartKey, qty }];
     });
   };
 
   const updateQty = (id, qty) => {
     setCart((prev) =>
       qty <= 0
-        ? prev.filter((item) => item.id !== id)
-        : prev.map((item) => (item.id === id ? { ...item, qty } : item))
+        ? prev.filter((item) => (item.cartKey || item.id) !== id)
+        : prev.map((item) =>
+            (item.cartKey || item.id) === id ? { ...item, qty } : item
+          )
     );
   };
 
   const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+    setCart((prev) => prev.filter((item) => (item.cartKey || item.id) !== id));
   };
 
   const toggleWishlist = (id) => {

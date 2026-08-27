@@ -414,7 +414,7 @@ export default function Checkout() {
       cart
         .map((item) => {
           const product = products.find((p) => p.id === item.id);
-          return product ? { ...product, qty: item.qty } : null;
+          return product ? { ...product, ...item, qty: item.qty } : null;
         })
         .filter(Boolean),
     [cart]
@@ -634,7 +634,7 @@ export default function Checkout() {
 
             <div className="space-y-2 max-h-36 overflow-y-auto thin-scrollbar pr-1 mb-2.5">
               {items.map((item) => (
-                <div key={item.id} className="flex items-center justify-between text-[11px]">
+                <div key={item.cartKey || item.id} className="flex items-center justify-between text-[11px]">
                   <span className="text-ink/70 truncate pr-2">
                     {item.name} <span className="text-ink/40">× {item.qty}</span>
                   </span>
